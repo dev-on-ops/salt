@@ -1,0 +1,17 @@
+#File: /etc/salt/cloud.maps.d/testvms.map
+
+vmware-ubuntu1804:
+  - vmtest01:
+      grains:
+        roles: test1
+      devices:
+        network:
+          Network adapter 1:
+            ip: 192.168.255.22
+  - vmtest02:
+      grains:
+        roles: test2
+      devices:
+        network:
+          Network adapter 1:
+            ip: 192.168.255.23
