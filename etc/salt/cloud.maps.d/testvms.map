@@ -3,14 +3,18 @@
 vmware-ubuntu1804:
   - vmtest01:
       grains:
-        roles: test1
+        roles: 
+          - microk8s
+          - chrony
       devices:
         network:
           Network adapter 1:
             ip: 192.168.255.22
   - vmtest02:
       grains:
-        roles: test2
+        roles:
+          - microk8s
+          - chrony
       devices:
         network:
           Network adapter 1:
