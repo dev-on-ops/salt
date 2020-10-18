@@ -1,0 +1,36 @@
+# vim: sts=2 ts=2 sw= et ai
+#
+---
+lvm:
+  pkgs:
+    - lvm2
+    - cryptsetup
+  cfgsource: salt://lvm/templates/conf.jinja
+  group: root
+  filemode: '0640'
+  dir_mode: '0755'
+  files:
+    loopbackdir: /tmp/loopdevs
+  kmodules: []
+
+  config:
+    dir:
+      profiles: /etc/lvm/profile
+      backups: /etc/lvm/backup
+
+  profiles:
+    default: {}
+    remove: {}
+    create: {}
+    man5:
+      manpage: lvm.conf(5)
+      vendor: kernel
+      format:
+        div: "="
+        ucl: false
+        json: false
+  vg:
+    enable_export: false
+    enable_cfgrestore: false
+  pv: {}
+  lv: {}
